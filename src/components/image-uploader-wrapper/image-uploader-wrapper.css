@@ -1,0 +1,36 @@
+:host {
+  .wrapper {
+    width: 500px;
+  }
+  .container {
+    padding: 0.5rem;
+    display: flex;
+    gap: 3rem;
+  }
+
+  .btn-container {
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+  }
+
+  .upload-button {
+    padding: 12px 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #0e70e0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .upload-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .upload-button:hover:not(:disabled) {
+    background-color: #0c47c7;
+  }
+}
