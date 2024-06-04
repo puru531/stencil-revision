@@ -6,6 +6,14 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppDummy {
+    }
+    interface DonutProgress {
+        "completedSteps": number;
+        "desktopSize": number;
+        "mobileSize": number;
+        "steps": number;
+    }
     interface DonutProgressLoader {
         "completedSteps": number;
         "desktopSize": number;
@@ -29,6 +37,18 @@ export interface ImageUploaderCustomEvent<T> extends CustomEvent<T> {
     target: HTMLImageUploaderElement;
 }
 declare global {
+    interface HTMLAppDummyElement extends Components.AppDummy, HTMLStencilElement {
+    }
+    var HTMLAppDummyElement: {
+        prototype: HTMLAppDummyElement;
+        new (): HTMLAppDummyElement;
+    };
+    interface HTMLDonutProgressElement extends Components.DonutProgress, HTMLStencilElement {
+    }
+    var HTMLDonutProgressElement: {
+        prototype: HTMLDonutProgressElement;
+        new (): HTMLDonutProgressElement;
+    };
     interface HTMLDonutProgressLoaderElement extends Components.DonutProgressLoader, HTMLStencilElement {
     }
     var HTMLDonutProgressLoaderElement: {
@@ -59,12 +79,22 @@ declare global {
         new (): HTMLImageUploaderWrapperElement;
     };
     interface HTMLElementTagNameMap {
+        "app-dummy": HTMLAppDummyElement;
+        "donut-progress": HTMLDonutProgressElement;
         "donut-progress-loader": HTMLDonutProgressLoaderElement;
         "image-uploader": HTMLImageUploaderElement;
         "image-uploader-wrapper": HTMLImageUploaderWrapperElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppDummy {
+    }
+    interface DonutProgress {
+        "completedSteps"?: number;
+        "desktopSize"?: number;
+        "mobileSize"?: number;
+        "steps"?: number;
+    }
     interface DonutProgressLoader {
         "completedSteps"?: number;
         "desktopSize"?: number;
@@ -84,6 +114,8 @@ declare namespace LocalJSX {
     interface ImageUploaderWrapper {
     }
     interface IntrinsicElements {
+        "app-dummy": AppDummy;
+        "donut-progress": DonutProgress;
         "donut-progress-loader": DonutProgressLoader;
         "image-uploader": ImageUploader;
         "image-uploader-wrapper": ImageUploaderWrapper;
@@ -93,6 +125,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-dummy": LocalJSX.AppDummy & JSXBase.HTMLAttributes<HTMLAppDummyElement>;
+            "donut-progress": LocalJSX.DonutProgress & JSXBase.HTMLAttributes<HTMLDonutProgressElement>;
             "donut-progress-loader": LocalJSX.DonutProgressLoader & JSXBase.HTMLAttributes<HTMLDonutProgressLoaderElement>;
             "image-uploader": LocalJSX.ImageUploader & JSXBase.HTMLAttributes<HTMLImageUploaderElement>;
             "image-uploader-wrapper": LocalJSX.ImageUploaderWrapper & JSXBase.HTMLAttributes<HTMLImageUploaderWrapperElement>;

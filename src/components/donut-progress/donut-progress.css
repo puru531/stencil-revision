@@ -1,0 +1,79 @@
+:host {
+  display: block;
+}
+
+.pulse-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--desktop-size);
+  height: var(--desktop-size);
+  position: relative;
+}
+
+.circular-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #eee;
+  z-index: 1;
+}
+
+.circle-progress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 2;
+  clip: rect(0, var(--desktop-size), var(--desktop-size), var(--desktop-size) / 2);
+  transform: rotate(180deg); /* Rotate to start from the top */
+}
+
+.circle-inner {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background: white;
+  z-index: 3;
+}
+
+.text {
+  position: absolute;
+  z-index: 4;
+  text-align: center;
+}
+
+.percentage {
+  font-size: 2rem;
+  color: #333;
+}
+
+.completed {
+  font-size: 1em;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .pulse-wrapper {
+    width: var(--mobile-size);
+    height: var(--mobile-size);
+  }
+  .percentage {
+    font-size: 1em;
+  }
+  .completed {
+    font-size: 0.8em;
+  }
+}
