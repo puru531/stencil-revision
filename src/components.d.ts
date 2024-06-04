@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DonutProgressLoader {
+        "completedSteps": number;
+        "desktopSize": number;
+        "mobileSize": number;
+        "steps": number;
+    }
     interface ImageUploader {
         "errorMessage": string;
         "height": number;
@@ -23,6 +29,12 @@ export interface ImageUploaderCustomEvent<T> extends CustomEvent<T> {
     target: HTMLImageUploaderElement;
 }
 declare global {
+    interface HTMLDonutProgressLoaderElement extends Components.DonutProgressLoader, HTMLStencilElement {
+    }
+    var HTMLDonutProgressLoaderElement: {
+        prototype: HTMLDonutProgressLoaderElement;
+        new (): HTMLDonutProgressLoaderElement;
+    };
     interface HTMLImageUploaderElementEventMap {
         "imageSelected": File;
     }
@@ -47,11 +59,18 @@ declare global {
         new (): HTMLImageUploaderWrapperElement;
     };
     interface HTMLElementTagNameMap {
+        "donut-progress-loader": HTMLDonutProgressLoaderElement;
         "image-uploader": HTMLImageUploaderElement;
         "image-uploader-wrapper": HTMLImageUploaderWrapperElement;
     }
 }
 declare namespace LocalJSX {
+    interface DonutProgressLoader {
+        "completedSteps"?: number;
+        "desktopSize"?: number;
+        "mobileSize"?: number;
+        "steps"?: number;
+    }
     interface ImageUploader {
         "errorMessage"?: string;
         "height"?: number;
@@ -65,6 +84,7 @@ declare namespace LocalJSX {
     interface ImageUploaderWrapper {
     }
     interface IntrinsicElements {
+        "donut-progress-loader": DonutProgressLoader;
         "image-uploader": ImageUploader;
         "image-uploader-wrapper": ImageUploaderWrapper;
     }
@@ -73,6 +93,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "donut-progress-loader": LocalJSX.DonutProgressLoader & JSXBase.HTMLAttributes<HTMLDonutProgressLoaderElement>;
             "image-uploader": LocalJSX.ImageUploader & JSXBase.HTMLAttributes<HTMLImageUploaderElement>;
             "image-uploader-wrapper": LocalJSX.ImageUploaderWrapper & JSXBase.HTMLAttributes<HTMLImageUploaderWrapperElement>;
         }
