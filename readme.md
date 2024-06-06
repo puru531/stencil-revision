@@ -115,7 +115,7 @@ Check out this [Live Demo](https://stackblitz.com/edit/vitejs-vite-b6zuds?file=s
 
 
 
-svg file
+svg file blue color
 ```<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
 <circle cx="100" cy="100" r="100" fill="white"/>
 <path d="M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100ZM25 100C25 141.421 58.5786 175 100 175C141.421 175 175 141.421 175 100C175 58.5786 141.421 25 100 25C58.5786 25 25 58.5786 25 100Z" fill="#DBD8D5"/>
@@ -129,6 +129,21 @@ svg file
 <stop offset="0.545" stop-color="#0A5DB8"/>
 <stop offset="0.832716" stop-color="#0F4A92"/>
 <stop offset="1" stop-color="#12407E"/>
+</linearGradient>
+</defs>
+</svg>```
+
+Green color
+```<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+<circle cx="100" cy="100" r="100" fill="white"/>
+<path d="M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100ZM25 100C25 141.421 58.5786 175 100 175C141.421 175 175 141.421 175 100C175 58.5786 141.421 25 100 25C58.5786 25 25 58.5786 25 100Z" fill="#CCE6FF"/>
+<path d="M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100ZM25 100C25 141.421 58.5786 175 100 175C141.421 175 175 141.421 175 100C175 58.5786 141.421 25 100 25C58.5786 25 25 58.5786 25 100Z" fill="#29C45D"/>
+<path d="M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100ZM25 100C25 141.421 58.5786 175 100 175C141.421 175 175 141.421 175 100C175 58.5786 141.421 25 100 25C58.5786 25 25 58.5786 25 100Z" fill="url(#paint0_linear_5382_33585)"/>
+<defs>
+<linearGradient id="paint0_linear_5382_33585" x1="46" y1="15" x2="158" y2="178" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7AF0A4"/>
+<stop offset="0.53" stop-color="#29C45D"/>
+<stop offset="1" stop-color="#17A646"/>
 </linearGradient>
 </defs>
 </svg>```
