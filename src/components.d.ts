@@ -8,8 +8,6 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppDummy {
     }
-    interface CvsDonutLoader {
-    }
     interface DonutProgress {
         "completedSteps": number;
         "desktopSize": number;
@@ -18,10 +16,9 @@ export namespace Components {
         "steps": number;
     }
     interface DonutProgressLoader {
-        "completedSteps": number;
         "desktopSize": number;
         "mobileSize": number;
-        "steps": number;
+        "percent": number;
     }
     interface ImageUploader {
         "errorMessage": string;
@@ -45,12 +42,6 @@ declare global {
     var HTMLAppDummyElement: {
         prototype: HTMLAppDummyElement;
         new (): HTMLAppDummyElement;
-    };
-    interface HTMLCvsDonutLoaderElement extends Components.CvsDonutLoader, HTMLStencilElement {
-    }
-    var HTMLCvsDonutLoaderElement: {
-        prototype: HTMLCvsDonutLoaderElement;
-        new (): HTMLCvsDonutLoaderElement;
     };
     interface HTMLDonutProgressElement extends Components.DonutProgress, HTMLStencilElement {
     }
@@ -89,7 +80,6 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-dummy": HTMLAppDummyElement;
-        "cvs-donut-loader": HTMLCvsDonutLoaderElement;
         "donut-progress": HTMLDonutProgressElement;
         "donut-progress-loader": HTMLDonutProgressLoaderElement;
         "image-uploader": HTMLImageUploaderElement;
@@ -99,8 +89,6 @@ declare global {
 declare namespace LocalJSX {
     interface AppDummy {
     }
-    interface CvsDonutLoader {
-    }
     interface DonutProgress {
         "completedSteps"?: number;
         "desktopSize"?: number;
@@ -109,10 +97,9 @@ declare namespace LocalJSX {
         "steps"?: number;
     }
     interface DonutProgressLoader {
-        "completedSteps"?: number;
         "desktopSize"?: number;
         "mobileSize"?: number;
-        "steps"?: number;
+        "percent"?: number;
     }
     interface ImageUploader {
         "errorMessage"?: string;
@@ -128,7 +115,6 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-dummy": AppDummy;
-        "cvs-donut-loader": CvsDonutLoader;
         "donut-progress": DonutProgress;
         "donut-progress-loader": DonutProgressLoader;
         "image-uploader": ImageUploader;
@@ -140,7 +126,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-dummy": LocalJSX.AppDummy & JSXBase.HTMLAttributes<HTMLAppDummyElement>;
-            "cvs-donut-loader": LocalJSX.CvsDonutLoader & JSXBase.HTMLAttributes<HTMLCvsDonutLoaderElement>;
             "donut-progress": LocalJSX.DonutProgress & JSXBase.HTMLAttributes<HTMLDonutProgressElement>;
             "donut-progress-loader": LocalJSX.DonutProgressLoader & JSXBase.HTMLAttributes<HTMLDonutProgressLoaderElement>;
             "image-uploader": LocalJSX.ImageUploader & JSXBase.HTMLAttributes<HTMLImageUploaderElement>;
