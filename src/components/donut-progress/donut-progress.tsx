@@ -8,11 +8,14 @@ import { Component, Host, Prop, h } from '@stencil/core';
 export class DonutProgress {
   @Prop() steps: number = 4;
   @Prop() completedSteps: number = 0;
-  @Prop() desktopSize: number = 200;
+  @Prop() percent: number;
+  @Prop() desktopSize: number = 250;
   @Prop() mobileSize: number = 150;
 
-  get percent() {
-    return (this.completedSteps / this.steps) * 100;
+  componentWillLoad() {
+    if (this.percent === undefined) {
+      this.percent = (this.completedSteps / this.steps) * 100;
+    }
   }
 
   get gradient() {
