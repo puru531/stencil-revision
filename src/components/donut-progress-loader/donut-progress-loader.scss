@@ -1,6 +1,7 @@
 :host {
   display: block;
 }
+
 .donut-wrapper {
   display: flex;
   align-items: center;
@@ -9,11 +10,6 @@
   height: 100%;
   max-width: var(--desktop-size);
   max-height: var(--desktop-size);
-  outline: none;
-}
-
-.donut-wrapper:focus {
-  outline: 2px solid #0180ff;
 }
 
 .donut-chart {
@@ -24,31 +20,30 @@
 
 .circle-bg {
   fill: none;
-  stroke: #eee; //$color-balck
-  stroke-width: 5;
+  stroke: $color-gray;
+  stroke-width: 4.2;
 }
 
 .circle {
   fill: none;
-  stroke-width: 5;
+  stroke-width: 4.2;
   transition: stroke-dasharray 0.6s ease 0s;
   transform: rotate(180deg);
   transform-origin: 50% 50%;
 }
 
 .percentage {
-  color: #000; //$color-balck;
-  font-family: Arial, sans-serif;
+  color: $color-black;
+  // font-family: "CVS Health Sans VF";
   font-size: 0.43em;
   font-style: normal;
-  line-height: 120;
   font-weight: 400;
   text-anchor: middle;
 }
 
 .completed {
-  color: #000; //$color-balck;
-  font-family: Arial, sans-serif;
+  color: $color-black;
+  // font-family: "CVS Health Sans VF";
   font-size: 0.16em;
   font-style: normal;
   font-weight: 400;
