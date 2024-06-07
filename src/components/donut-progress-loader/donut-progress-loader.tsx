@@ -6,7 +6,8 @@ import { Component, Host, Prop, State, h } from '@stencil/core';
   shadow: true,
 })
 export class DonutProgressLoader {
-  @Prop() percent: number = 0;
+ 
+  @Prop() percent: number = 100;
   @Prop() desktopSize: number = 200;
   @Prop() mobileSize: number = 200;
 
@@ -24,18 +25,15 @@ export class DonutProgressLoader {
     const strokeDasharray = `${this.percent}, 100`;
     return (
       <Host>
-        <figure
+        <div
           class="donut-wrapper"
           style={{ '--desktop-size': `${this.desktopSize}px`, '--mobile-size': `${this.mobileSize}px` }}
           role="progressbar"
           aria-valuenow={this.percent}
           aria-valuemin="0"
           aria-valuemax="100"
-          tabindex="0"
-          aria-label={`Visit checklist, ${Math.round(this.percent)}% complete`}
         >
-          <svg viewBox="0 0 50 50" class="donut-chart" role="img" aria-hidden="true">
-            <title>{`Visit checklist, ${Math.round(this.percent)}% complete`}</title>
+          <svg viewBox="0 0 36 36" class="donut-chart">
             <defs>
               <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#12407E" />
@@ -53,26 +51,26 @@ export class DonutProgressLoader {
             </defs>
             <path
               class="circle-bg"
-              d="M25 5
-              a 20 20 0 0 1 0 40
-              a 20 20 0 0 1 0 -40"
+              d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
             />
             <path
               class="circle"
               stroke-dasharray={strokeDasharray}
-              d="M25 5
-              a 20 20 0 0 1 0 40
-              a 20 20 0 0 1 0 -40"
+              d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
               stroke={`url(#${this.gradientId})`}
             />
-            <text x="25" y="25" class="percentage">
+            <text x="18" y="18" class="percentage">
               {Math.round(this.percent)}%
             </text>
-            <text x="25" y="29" class="completed">
+            <text x="18" y="22" class="completed">
               Completed
             </text>
           </svg>
-        </figure>
+        </div>
       </Host>
     );
   }
