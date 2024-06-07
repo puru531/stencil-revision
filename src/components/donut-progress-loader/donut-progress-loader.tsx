@@ -34,7 +34,7 @@ export class DonutProgressLoader {
           tabindex="0"
           aria-label={`Visit checklist, ${Math.round(this.percent)}% complete`}
         >
-          <svg viewBox="0 0 36 36" class="donut-chart" role="img" aria-hidden="true">
+          <svg viewBox="0 0 50 50" class="donut-chart" role="img" aria-hidden="true">
             <title>{`Visit checklist, ${Math.round(this.percent)}% complete`}</title>
             <defs>
               <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -53,22 +53,22 @@ export class DonutProgressLoader {
             </defs>
             <path
               class="circle-bg"
-              d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
+              d="M25 5
+              a 20 20 0 0 1 0 40
+              a 20 20 0 0 1 0 -40"
             />
             <path
               class="circle"
               stroke-dasharray={strokeDasharray}
-              d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
+              d="M25 5
+              a 20 20 0 0 1 0 40
+              a 20 20 0 0 1 0 -40"
               stroke={`url(#${this.gradientId})`}
             />
-            <text x="18" y="18" class="percentage">
+            <text x="25" y="25" class="percentage">
               {Math.round(this.percent)}%
             </text>
-            <text x="18" y="22" class="completed">
+            <text x="25" y="29" class="completed">
               Completed
             </text>
           </svg>
