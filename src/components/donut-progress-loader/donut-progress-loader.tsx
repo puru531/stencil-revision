@@ -24,15 +24,18 @@ export class DonutProgressLoader {
     const strokeDasharray = `${this.percent}, 100`;
     return (
       <Host>
-        <div
-          class="pulse-wrapper"
+        <figure
+          class="donut-wrapper"
           style={{ '--desktop-size': `${this.desktopSize}px`, '--mobile-size': `${this.mobileSize}px` }}
           role="progressbar"
           aria-valuenow={this.percent}
           aria-valuemin="0"
           aria-valuemax="100"
+          tabindex="0"
+          aria-label={`Visit checklist, ${Math.round(this.percent)}% complete`}
         >
-          <svg viewBox="0 0 36 36" class="circular-chart">
+          <svg viewBox="0 0 36 36" class="donut-chart" role="img" aria-hidden="true">
+            <title>{`Visit checklist, ${Math.round(this.percent)}% complete`}</title>
             <defs>
               <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#12407E" />
@@ -41,14 +44,8 @@ export class DonutProgressLoader {
                 <stop offset="60%" stop-color="#066ED9" />
                 <stop offset="80%" stop-color="#056FDD" />
                 <stop offset="100%" stop-color="#0180FF" />
-                {/* <stop stop-color="#12407E" />
-                <stop offset="0.260019" stop-color="#0F4A92" />
-                <stop offset="0.295" stop-color="#0A5DB8" />
-                <stop offset="0.545" stop-color="#066ED9" />
-                <stop offset="0.832716" stop-color="#056FDD" />
-                <stop offset="1" stop-color="#0180FF" /> */}
               </linearGradient>
-              <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient id="greenGradient" x1="50%" y1="0%" x2="100%" y2="80%">
                 <stop stop-color="#17A646" />
                 <stop offset="0.53" stop-color="#29C45D" />
                 <stop offset="1" stop-color="#7AF0A4" />
@@ -75,7 +72,7 @@ export class DonutProgressLoader {
               Completed
             </text>
           </svg>
-        </div>
+        </figure>
       </Host>
     );
   }
