@@ -10,6 +10,11 @@
   height: 100%;
   max-width: var(--desktop-size);
   max-height: var(--desktop-size);
+  outline: none;
+}
+
+.donut-wrapper:focus {
+  outline: 2px solid #0180ff;
 }
 
 .donut-chart {
@@ -20,7 +25,7 @@
 
 .circle-bg {
   fill: none;
-  stroke: $color-gray;
+  stroke: #fff; //$color-gray;
   stroke-width: 4.2;
 }
 
@@ -33,7 +38,7 @@
 }
 
 .percentage {
-  color: $color-black;
+  color: #000; //$color-black;
   // font-family: "CVS Health Sans VF";
   font-size: 0.43em;
   font-style: normal;
@@ -42,7 +47,7 @@
 }
 
 .completed {
-  color: $color-black;
+  color: #000; //$color-black;
   // font-family: "CVS Health Sans VF";
   font-size: 0.16em;
   font-style: normal;

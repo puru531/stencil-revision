@@ -16,8 +16,17 @@ export namespace Components {
         "steps": number;
     }
     interface DonutProgressLoader {
+        /**
+          * Size of the progress loader in pixels on desktop devices.
+         */
         "desktopSize": number;
+        /**
+          * Size of the progress loader in pixels on mobile devices.
+         */
         "mobileSize": number;
+        /**
+          * Completion percentage of the progress loader (0-100).
+         */
         "percent": number;
     }
     interface ImageUploader {
@@ -97,8 +106,17 @@ declare namespace LocalJSX {
         "steps"?: number;
     }
     interface DonutProgressLoader {
+        /**
+          * Size of the progress loader in pixels on desktop devices.
+         */
         "desktopSize"?: number;
+        /**
+          * Size of the progress loader in pixels on mobile devices.
+         */
         "mobileSize"?: number;
+        /**
+          * Completion percentage of the progress loader (0-100).
+         */
         "percent"?: number;
     }
     interface ImageUploader {

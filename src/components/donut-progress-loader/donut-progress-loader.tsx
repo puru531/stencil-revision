@@ -6,11 +6,16 @@ import { Component, Host, Prop, State, h } from '@stencil/core';
   shadow: true,
 })
 export class DonutProgressLoader {
- 
+  /** Completion percentage of the progress loader (0-100). */
   @Prop() percent: number = 100;
+
+  /** Size of the progress loader in pixels on desktop devices. */
   @Prop() desktopSize: number = 200;
+
+  /** Size of the progress loader in pixels on mobile devices. */
   @Prop() mobileSize: number = 200;
 
+  /** ID of the gradient used for rendering the progress loader. */
   @State() gradientId: string = 'blueGradient';
 
   componentWillLoad() {
@@ -25,15 +30,18 @@ export class DonutProgressLoader {
     const strokeDasharray = `${this.percent}, 100`;
     return (
       <Host>
-        <div
+        <figure
           class="donut-wrapper"
           style={{ '--desktop-size': `${this.desktopSize}px`, '--mobile-size': `${this.mobileSize}px` }}
           role="progressbar"
           aria-valuenow={this.percent}
           aria-valuemin="0"
           aria-valuemax="100"
+          tabindex={0}
+          aria-label={`Visit checklist, ${Math.round(this.percent)}% complete`}
         >
-          <svg viewBox="0 0 36 36" class="donut-chart">
+          <svg viewBox="0 0 36 36" class="donut-chart" role="img" aria-hidden="true">
+            <title>{`Visit checklist, ${Math.round(this.percent)}% complete`}</title>
             <defs>
               <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#12407E" />
@@ -70,7 +78,7 @@ export class DonutProgressLoader {
               Completed
             </text>
           </svg>
-        </div>
+        </figure>
       </Host>
     );
   }
