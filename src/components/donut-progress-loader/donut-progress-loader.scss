@@ -25,7 +25,7 @@
 
 .circle-bg {
   fill: none;
-  stroke: #fff; //$color-gray;
+  stroke: $color-gray;
   stroke-width: 4.2;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .percentage {
-  color: #000; //$color-black;
+  color: $color-black;
   // font-family: "CVS Health Sans VF";
   font-size: 0.43em;
   font-style: normal;
@@ -47,7 +47,7 @@
 }
 
 .completed {
-  color: #000; //$color-black;
+  color: $color-black;
   // font-family: "CVS Health Sans VF";
   font-size: 0.16em;
   font-style: normal;
