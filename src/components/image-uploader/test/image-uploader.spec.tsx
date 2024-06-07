@@ -1,7 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { ImageUploader } from '../image-uploader';
 
-describe('file-uploader', () => {
+describe('image-uploader', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [ImageUploader],

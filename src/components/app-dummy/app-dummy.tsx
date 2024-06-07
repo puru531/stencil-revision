@@ -2,7 +2,7 @@ import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'app-dummy',
-  styleUrl: 'app-dummy.css',
+  styleUrl: 'app-dummy.scss',
   shadow: true,
 })
 export class AppDummy {
@@ -15,7 +15,7 @@ export class AppDummy {
         <image-uploader-wrapper></image-uploader-wrapper> */}
 
         <h3>Donut progress loader using svg : Type 1</h3>
-        <donut-progress-loader percent={75} desktopSize={500}></donut-progress-loader>
+        <donut-progress-loader percent={75} desktopSize={200}></donut-progress-loader>
 
         {/* <h3>Donut progress loader using div : Type 2</h3>
         {this.completedStep > 0 && <donut-progress percent={67} desktopSize={250} mobileSize={150}></donut-progress>}

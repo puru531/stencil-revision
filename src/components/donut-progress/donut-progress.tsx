@@ -2,7 +2,7 @@ import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'donut-progress',
-  styleUrl: 'donut-progress.css',
+  styleUrl: 'donut-progress.scss',
   shadow: true,
 })
 export class DonutProgress {

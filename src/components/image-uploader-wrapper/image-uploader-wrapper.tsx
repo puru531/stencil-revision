@@ -2,7 +2,7 @@ import { Component, Host, State, h } from '@stencil/core';
 
 @Component({
   tag: 'image-uploader-wrapper',
-  styleUrl: 'image-uploader-wrapper.css',
+  styleUrl: 'image-uploader-wrapper.scss',
   shadow: true,
 })
 export class ImageUploaderWrapper {

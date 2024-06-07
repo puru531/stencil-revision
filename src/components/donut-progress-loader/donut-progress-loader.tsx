@@ -2,7 +2,7 @@ import { Component, Host, Prop, State, h } from '@stencil/core';
 
 @Component({
   tag: 'donut-progress-loader',
-  styleUrl: 'donut-progress-loader.css',
+  styleUrl: 'donut-progress-loader.scss',
   shadow: true,
 })
 export class DonutProgressLoader {

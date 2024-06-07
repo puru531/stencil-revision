@@ -2,7 +2,7 @@ import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'image-uploader',
-  styleUrl: 'image-uploader.css',
+  styleUrl: 'image-uploader.scss',
   shadow: true,
 })
 export class ImageUploader {
