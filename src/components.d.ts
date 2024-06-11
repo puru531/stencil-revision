@@ -17,13 +17,9 @@ export namespace Components {
     }
     interface DonutProgressLoader {
         /**
-          * Size of the progress loader in pixels on desktop devices.
+          * Size of the progress loader in pixels.
          */
-        "desktopSize": number;
-        /**
-          * Size of the progress loader in pixels on mobile devices.
-         */
-        "mobileSize": number;
+        "donutSize": number;
         /**
           * Completion percentage of the progress loader (0-100).
          */
@@ -107,13 +103,9 @@ declare namespace LocalJSX {
     }
     interface DonutProgressLoader {
         /**
-          * Size of the progress loader in pixels on desktop devices.
+          * Size of the progress loader in pixels.
          */
-        "desktopSize"?: number;
-        /**
-          * Size of the progress loader in pixels on mobile devices.
-         */
-        "mobileSize"?: number;
+        "donutSize"?: number;
         /**
           * Completion percentage of the progress loader (0-100).
          */
