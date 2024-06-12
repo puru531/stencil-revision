@@ -1,26 +1,37 @@
-import { Component, Host, Prop, State, h } from '@stencil/core';
+import { Component, Host, h, Prop, State } from "@stencil/core";
 
 @Component({
-  tag: 'donut-progress-loader',
-  styleUrl: 'donut-progress-loader.scss',
-  shadow: true,
+  tag: "cvs-donut-progress-bar",
+  styleUrl: "cvs-donut-progress-bar.scss",
+  shadow: true
 })
-export class DonutProgressLoader {
-  /** Completion percentage of the progress loader (0-100). */
-  @Prop() percent: number = 100;
+export class CvsDonutProgressBar {
+  /**
+   * Completion percentage of the progress loader (0-100).
+   */
+  @Prop() percent: number = 25;
 
-  /** Size of the progress loader in pixels. */
+  /**
+   * Size of the progress loader in pixels.
+   */
   @Prop() donutSize: number = 200;
 
-  /** ID of the gradient used for rendering the progress loader. */
-  @State() gradientId: string = 'blueGradient';
+  /**
+   * A11y text of the progress loader.
+   */
+  @Prop() caption: string = "";
+
+  /**
+   * ID of the gradient used for rendering the progress loader.
+   */
+  @State() gradientId: string = "blueGradient";
 
   componentWillLoad() {
-    this.gradientId = this.percent === 100 ? 'greenGradient' : 'blueGradient';
+    this.gradientId = this.percent === 100 ? "greenGradient" : "blueGradient";
   }
 
   componentShouldUpdate() {
-    this.gradientId = this.percent === 100 ? 'greenGradient' : 'blueGradient';
+    this.gradientId = this.percent === 100 ? "greenGradient" : "blueGradient";
   }
 
   render() {
@@ -29,13 +40,13 @@ export class DonutProgressLoader {
       <Host>
         <figure
           class="donut-wrapper"
-          style={{ '--donut-size': `${this.donutSize}px` }}
+          style={{ "--donut-size": `${this.donutSize}px` }}
           aria-valuemin="0"
           aria-valuemax="100"
-          tabindex={0}
-          aria-label={`Visit checklist, ${Math.round(this.percent)}% complete`}
+          tabIndex={0}
+          aria-label={`${this.caption} ${Math.round(this.percent)}% complete`}
         >
-          <figcaption class="visually-hidden">{`Visit checklist, ${Math.round(this.percent)}% complete`}</figcaption>
+          {/* <figcaption class="visually-hidden">{`${this.caption} ${Math.round(this.percent)}% complete`}</figcaption> */}
           <svg viewBox="0 0 36 36" class="donut-chart" role="img" aria-hidden="true">
             <defs>
               <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -66,13 +77,15 @@ export class DonutProgressLoader {
               a 15.9155 15.9155 0 0 1 0 -31.831"
               stroke={`url(#${this.gradientId})`}
             />
+          </svg>
+          <figcaption class="donut-caption">
             <text x="18" y="18" class="percentage">
               {Math.round(this.percent)}%
             </text>
             <text x="18" y="22" class="completed">
               Completed
             </text>
-          </svg>
+          </figcaption>
         </figure>
       </Host>
     );
