@@ -23,11 +23,9 @@ export namespace Components {
         "percent": number;
     }
     interface DonutProgress {
-        "completedSteps": number;
         "desktopSize": number;
-        "mobileSize": number;
+        "donutCaption": string;
         "percent": number;
-        "steps": number;
     }
     interface ImageUploader {
         "errorMessage": string;
@@ -113,11 +111,9 @@ declare namespace LocalJSX {
         "percent"?: number;
     }
     interface DonutProgress {
-        "completedSteps"?: number;
         "desktopSize"?: number;
-        "mobileSize"?: number;
+        "donutCaption"?: string;
         "percent"?: number;
-        "steps"?: number;
     }
     interface ImageUploader {
         "errorMessage"?: string;

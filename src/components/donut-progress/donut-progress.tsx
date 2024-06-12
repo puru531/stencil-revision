@@ -6,15 +6,16 @@ import { Component, Host, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class DonutProgress {
-  @Prop() steps: number = 4;
-  @Prop() completedSteps: number = 0;
   @Prop() percent: number;
-  @Prop() desktopSize: number = 250;
-  @Prop() mobileSize: number = 150;
+  @Prop() desktopSize: number = 200;
+  @Prop() donutCaption: string = '';
 
   componentWillLoad() {
-    if (this.percent === undefined) {
-      this.percent = (this.completedSteps / this.steps) * 100;
+    if (this.percent > 100) {
+      this.percent = 100;
+    }
+    if (this.percent < 0) {
+      this.percent = 0;
     }
   }
 
@@ -40,7 +41,7 @@ export class DonutProgress {
       <Host>
         <div
           class="pulse-wrapper"
-          style={{ '--desktop-size': `${this.desktopSize}px`, '--mobile-size': `${this.mobileSize}px`, '--progress': this.gradient }}
+          style={{ '--desktop-size': `${this.desktopSize}px`, '--progress': this.gradient }}
           role="progressbar"
           aria-valuenow={this.percent}
           aria-valuemin="0"
