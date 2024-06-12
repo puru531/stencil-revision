@@ -7,7 +7,7 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 export class DonutProgress {
   @Prop() percent: number;
-  @Prop() desktopSize: number = 200;
+  @Prop() donutSize: number = 200;
   @Prop() donutCaption: string = '';
 
   componentWillLoad() {
@@ -24,13 +24,13 @@ export class DonutProgress {
     return completedPercent === 100
       ? 'conic-gradient(#53d357 0%, #0f8d13 100%)'
       : `conic-gradient(
-        #12407E 0%, 
-        #12407E ${(completedPercent / 6) * 1}%, 
-        #0F4A92 ${(completedPercent / 6) * 2}%, 
-        #0A5DB8 ${(completedPercent / 6) * 3}%, 
-        #066ED9 ${(completedPercent / 6) * 4}%, 
-        #056FDD ${(completedPercent / 6) * 5}%, 
-        #0180FF ${completedPercent}%, 
+        #0180FF 0%, 
+        #0180FF ${(completedPercent / 6) * 1}%, 
+        #056FDD ${(completedPercent / 6) * 2}%, 
+        #066ED9 ${(completedPercent / 6) * 3}%, 
+        #0A5DB8 ${(completedPercent / 6) * 4}%, 
+        #0F4A92 ${(completedPercent / 6) * 5}%, 
+        #12407E ${completedPercent}%, 
         #f2f2f2 ${completedPercent}%, 
         #f2f2f2 100%
       )`;
@@ -41,20 +41,23 @@ export class DonutProgress {
       <Host>
         <div
           class="pulse-wrapper"
-          style={{ '--desktop-size': `${this.desktopSize}px`, '--progress': this.gradient }}
+          style={{ '--donut-size': `${this.donutSize}px`, '--progress': this.gradient }}
           role="progressbar"
           aria-valuenow={this.percent}
           aria-valuemin="0"
           aria-valuemax="100"
+          arie-label={`${this.donutCaption} ${this.percent}% complete`}
         >
           <div class="circular-chart">
             <div class="circle-bg"></div>
             <div class="circle-progress" style={{ background: this.gradient }}></div>
             <div class="circle-inner"></div>
-            <div class="text">
-              <div class="percentage">{Math.round(this.percent)}%</div>
-              <div class="completed">Completed</div>
-            </div>
+            <figcaption id="progress-description">
+              <div class="text">
+                <div class="percentage">{Math.round(this.percent)}%</div>
+                <div class="completed">Completed</div>
+              </div>
+            </figcaption>
           </div>
         </div>
       </Host>

@@ -8,7 +8,12 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppDummy {
     }
-    interface CvsDonutProgressBar {
+    interface DonutProgress {
+        "donutCaption": string;
+        "donutSize": number;
+        "percent": number;
+    }
+    interface DonutProgressLoader {
         /**
           * A11y text of the progress loader.
          */
@@ -20,11 +25,6 @@ export namespace Components {
         /**
           * Completion percentage of the progress loader (0-100).
          */
-        "percent": number;
-    }
-    interface DonutProgress {
-        "desktopSize": number;
-        "donutCaption": string;
         "percent": number;
     }
     interface ImageUploader {
@@ -50,17 +50,17 @@ declare global {
         prototype: HTMLAppDummyElement;
         new (): HTMLAppDummyElement;
     };
-    interface HTMLCvsDonutProgressBarElement extends Components.CvsDonutProgressBar, HTMLStencilElement {
-    }
-    var HTMLCvsDonutProgressBarElement: {
-        prototype: HTMLCvsDonutProgressBarElement;
-        new (): HTMLCvsDonutProgressBarElement;
-    };
     interface HTMLDonutProgressElement extends Components.DonutProgress, HTMLStencilElement {
     }
     var HTMLDonutProgressElement: {
         prototype: HTMLDonutProgressElement;
         new (): HTMLDonutProgressElement;
+    };
+    interface HTMLDonutProgressLoaderElement extends Components.DonutProgressLoader, HTMLStencilElement {
+    }
+    var HTMLDonutProgressLoaderElement: {
+        prototype: HTMLDonutProgressLoaderElement;
+        new (): HTMLDonutProgressLoaderElement;
     };
     interface HTMLImageUploaderElementEventMap {
         "imageSelected": File;
@@ -87,8 +87,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-dummy": HTMLAppDummyElement;
-        "cvs-donut-progress-bar": HTMLCvsDonutProgressBarElement;
         "donut-progress": HTMLDonutProgressElement;
+        "donut-progress-loader": HTMLDonutProgressLoaderElement;
         "image-uploader": HTMLImageUploaderElement;
         "image-uploader-wrapper": HTMLImageUploaderWrapperElement;
     }
@@ -96,7 +96,12 @@ declare global {
 declare namespace LocalJSX {
     interface AppDummy {
     }
-    interface CvsDonutProgressBar {
+    interface DonutProgress {
+        "donutCaption"?: string;
+        "donutSize"?: number;
+        "percent"?: number;
+    }
+    interface DonutProgressLoader {
         /**
           * A11y text of the progress loader.
          */
@@ -108,11 +113,6 @@ declare namespace LocalJSX {
         /**
           * Completion percentage of the progress loader (0-100).
          */
-        "percent"?: number;
-    }
-    interface DonutProgress {
-        "desktopSize"?: number;
-        "donutCaption"?: string;
         "percent"?: number;
     }
     interface ImageUploader {
@@ -129,8 +129,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-dummy": AppDummy;
-        "cvs-donut-progress-bar": CvsDonutProgressBar;
         "donut-progress": DonutProgress;
+        "donut-progress-loader": DonutProgressLoader;
         "image-uploader": ImageUploader;
         "image-uploader-wrapper": ImageUploaderWrapper;
     }
@@ -140,8 +140,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-dummy": LocalJSX.AppDummy & JSXBase.HTMLAttributes<HTMLAppDummyElement>;
-            "cvs-donut-progress-bar": LocalJSX.CvsDonutProgressBar & JSXBase.HTMLAttributes<HTMLCvsDonutProgressBarElement>;
             "donut-progress": LocalJSX.DonutProgress & JSXBase.HTMLAttributes<HTMLDonutProgressElement>;
+            "donut-progress-loader": LocalJSX.DonutProgressLoader & JSXBase.HTMLAttributes<HTMLDonutProgressLoaderElement>;
             "image-uploader": LocalJSX.ImageUploader & JSXBase.HTMLAttributes<HTMLImageUploaderElement>;
             "image-uploader-wrapper": LocalJSX.ImageUploaderWrapper & JSXBase.HTMLAttributes<HTMLImageUploaderWrapperElement>;
         }

@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--desktop-size);
-  height: var(--desktop-size);
+  width: var(--donut-size);
+  height: var(--donut-size);
   position: relative;
 }
 
@@ -50,8 +50,8 @@
 }
 
 .text {
-  position: absolute;
-  z-index: 4;
+  position: relative;
+  z-index: 10;
   text-align: center;
 }
 
@@ -63,17 +63,4 @@
 .completed {
   font-size: 1em;
   color: #333;
-}
-
-@media (max-width: 600px) {
-  .pulse-wrapper {
-    width: var(--mobile-size);
-    height: var(--mobile-size);
-  }
-  .percentage {
-    font-size: 1em;
-  }
-  .completed {
-    font-size: 0.8em;
-  }
 }

@@ -20,7 +20,7 @@
 
 .circle-bg {
   fill: none;
-  stroke: var(--ps-core-color-gray-10);
+  stroke: #ccc;
   stroke-width: 4.2;
 }
 
@@ -33,20 +33,19 @@
 }
 
 .percentage {
-  color: $primary-black;
-  font-family: var(--ps-theme-font-family);
-  font-size: var(--ps-theme-font-size-heading-xl);
+  color: #000;
+  // font-family: var(--ps-theme-font-family);
+  font-size: 40px;
   font-style: normal;
-  font-weight: var(--ps-theme-font-weight-normal);
+  font-weight: 400;
   text-anchor: middle;
 }
 
 .completed {
-  color: $primary-black;
-  font-family: var(--ps-theme-font-family);
-  font-size: var(--ps-theme-font-size-paragraph-s);
+  color: #000;
+  font-size: 16px;
   font-style: normal;
-  font-weight: var(--ps-theme-font-weight-normal);
+  font-weight: 400;
   text-anchor: middle;
 }
 
@@ -62,9 +61,9 @@
 }
 
 .donut-caption {
-    position: relative;
-    right: 100px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-   }
+  position: relative;
+  right: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

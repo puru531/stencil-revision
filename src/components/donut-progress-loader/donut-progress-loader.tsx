@@ -1,11 +1,11 @@
-import { Component, Host, h, Prop, State } from "@stencil/core";
+import { Component, Host, h, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: "cvs-donut-progress-bar",
-  styleUrl: "cvs-donut-progress-bar.scss",
-  shadow: true
+  tag: 'donut-progress-loader',
+  styleUrl: 'donut-progress-loader.scss',
+  shadow: true,
 })
-export class CvsDonutProgressBar {
+export class DonutProgressLoader {
   /**
    * Completion percentage of the progress loader (0-100).
    */
@@ -19,19 +19,19 @@ export class CvsDonutProgressBar {
   /**
    * A11y text of the progress loader.
    */
-  @Prop() caption: string = "";
+  @Prop() caption: string = '';
 
   /**
    * ID of the gradient used for rendering the progress loader.
    */
-  @State() gradientId: string = "blueGradient";
+  @State() gradientId: string = 'blueGradient';
 
   componentWillLoad() {
-    this.gradientId = this.percent === 100 ? "greenGradient" : "blueGradient";
+    this.gradientId = this.percent === 100 ? 'greenGradient' : 'blueGradient';
   }
 
   componentShouldUpdate() {
-    this.gradientId = this.percent === 100 ? "greenGradient" : "blueGradient";
+    this.gradientId = this.percent === 100 ? 'greenGradient' : 'blueGradient';
   }
 
   render() {
@@ -40,7 +40,7 @@ export class CvsDonutProgressBar {
       <Host>
         <figure
           class="donut-wrapper"
-          style={{ "--donut-size": `${this.donutSize}px` }}
+          style={{ '--donut-size': `${this.donutSize}px` }}
           aria-valuemin="0"
           aria-valuemax="100"
           tabIndex={0}
