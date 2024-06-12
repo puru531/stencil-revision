@@ -43,11 +43,10 @@ export class DonutProgress {
         <figure
           class="pulse-wrapper"
           style={{ '--donut-size': `${this.donutSize}px`, '--progress': this.gradient }}
-          role="progressbar"
           aria-valuenow={this.percent}
           aria-valuemin="0"
           aria-valuemax="100"
-          arie-label={`${this.donutCaption} ${this.percent}% complete`}
+          aria-label={`${this.donutCaption} ${this.percent}% complete`}
         >
           <figcaption class="visually-hidden">{`${this.donutCaption} ${this.percent}% complete`}</figcaption>
           <div class="circular-chart">
