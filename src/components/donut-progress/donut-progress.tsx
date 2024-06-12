@@ -20,7 +20,19 @@ export class DonutProgress {
 
   get gradient() {
     const completedPercent = this.percent;
-    return completedPercent === 100 ? 'conic-gradient(#53d357 0%, #0f8d13 100%)' : `conic-gradient(#3a9bf0, #0d57ac ${completedPercent}%, #f2f2f2 ${completedPercent}%, #f2f2f2)`;
+    return completedPercent === 100
+      ? 'conic-gradient(#53d357 0%, #0f8d13 100%)'
+      : `conic-gradient(
+        #12407E 0%, 
+        #12407E ${(completedPercent / 6) * 1}%, 
+        #0F4A92 ${(completedPercent / 6) * 2}%, 
+        #0A5DB8 ${(completedPercent / 6) * 3}%, 
+        #066ED9 ${(completedPercent / 6) * 4}%, 
+        #056FDD ${(completedPercent / 6) * 5}%, 
+        #0180FF ${completedPercent}%, 
+        #f2f2f2 ${completedPercent}%, 
+        #f2f2f2 100%
+      )`;
   }
 
   render() {
