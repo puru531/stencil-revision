@@ -22,7 +22,7 @@ export class DonutProgress {
   get gradient() {
     const completedPercent = this.percent;
     return completedPercent === 100
-      ? 'conic-gradient(#53d357 0%, #0f8d13 100%)'
+      ? 'conic-gradient(#7AF0A4 0%, #29C45D 33%, #17A646 66%, #7AF0A4 100%)'
       : `conic-gradient(
         #0180FF 0%, 
         #0180FF ${(completedPercent / 6) * 1}%, 
@@ -37,9 +37,10 @@ export class DonutProgress {
   }
 
   render() {
+    const isComplete = this.percent === 100;
     return (
       <Host>
-        <div
+        <figure
           class="pulse-wrapper"
           style={{ '--donut-size': `${this.donutSize}px`, '--progress': this.gradient }}
           role="progressbar"
@@ -48,18 +49,17 @@ export class DonutProgress {
           aria-valuemax="100"
           arie-label={`${this.donutCaption} ${this.percent}% complete`}
         >
+          <figcaption class="visually-hidden">{`${this.donutCaption} ${this.percent}% complete`}</figcaption>
           <div class="circular-chart">
             <div class="circle-bg"></div>
-            <div class="circle-progress" style={{ background: this.gradient }}></div>
+            <div class={`circle-progress ${isComplete ? 'rotate-90' : 'rotate-0'}`} style={{ background: this.gradient }}></div>
             <div class="circle-inner"></div>
-            <figcaption id="progress-description">
-              <div class="text">
-                <div class="percentage">{Math.round(this.percent)}%</div>
-                <div class="completed">Completed</div>
-              </div>
-            </figcaption>
+            <div class="text">
+              <div class="percentage">{Math.round(this.percent)}%</div>
+              <div class="completed">Completed</div>
+            </div>
           </div>
-        </div>
+        </figure>
       </Host>
     );
   }

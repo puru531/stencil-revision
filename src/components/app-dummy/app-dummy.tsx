@@ -16,7 +16,7 @@ export class AppDummy {
         <donut-progress-loader percent={80} donutSize={200}></donut-progress-loader> */}
 
         <h3>Donut progress loader using div : Type 2</h3>
-        <donut-progress tabIndex={0} percent={67} donutSize={200} donutCaption="Visit checklist"></donut-progress>
+        <donut-progress tabIndex={0} percent={80} donutSize={200} donutCaption="Visit checklist"></donut-progress>
       </Host>
     );
   }
